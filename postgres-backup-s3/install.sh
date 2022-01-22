@@ -7,12 +7,12 @@ set -eo pipefail
 apk update
 
 # install pg_dump
-apk add postgresql-client
+apk add postgresql14-client
 
 # install s3 tools
-apk add python py2-pip
-pip install awscli
-apk del py2-pip
+apk add python3 py3-six py3-urllib3 py3-colorama py3-pip
+pip3 install awscli
+apk del py3-pip
 
 # install go-cron
 apk add curl
